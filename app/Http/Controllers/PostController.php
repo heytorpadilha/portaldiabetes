@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class BlogController extends Controller
+class PostController extends Controller
 {
     public function show(){
         
-        return view('bloglist');
+        return view('postlist');
     }
 }
