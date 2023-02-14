@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 //Route::get('user/{user}', [UserController::class,'show']);
 
-// rota para chamada do blog
-Route::get('blog',[BlogController::class,'show']);
 
 // rota para chamada do Admin
-Route::get('adm',[PostController::class,'show']);
+//Route::get('adm',[PostController::class,'show']);
+Route::prefix('adm')->group(function(){
+    Route::get('',[PostController::class,'show']);
+    Route::get('/create',[PostController::class,'insert']);
+});
