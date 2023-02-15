@@ -16,4 +16,9 @@ class Post extends Model
         'content',
         'tags'
     ];
+
+    // criando relacao belongsTo quando o post pertence a usuário
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

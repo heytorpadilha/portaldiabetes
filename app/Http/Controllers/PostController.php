@@ -13,6 +13,8 @@ class PostController extends Controller
         $postList = Post::all();
         // pegando um registro por id
         $post = Post::find(1);
+        $user = User::find(1);
+        dd($user->posts->toArray());
         // retornando com where
         $postWhere = Post::where('title','DM1')->get();
         // retornando com where o primeiro registro
@@ -43,6 +45,10 @@ class PostController extends Controller
             'tags' => 'diabetes,dm1,saude,importancia'
         ]);
         dd($post);
+    }
+    public function delete(){
+        $post = Post::find(2);
+        $post->delete();
     }
 
 }
